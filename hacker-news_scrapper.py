@@ -1,3 +1,4 @@
+import os
 import datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -16,7 +17,7 @@ now = datetime.datetime.now()
 
 # email content placeholder
 content = ''
-print(load_dotenv)
+password = os.getenv('PASSWORD_CODE')
 
 
 def extract_news(url):
@@ -51,7 +52,7 @@ SERVER = 'smtp.gmail.com'
 PORT = 587
 FROM = 'cvenegas9@gmail.com'
 TO = 'carlosvenegas55@hotmail.com'  # must be a list
-PASS = ''
+PASS = password
 
 print('BOOM')
 msg = MIMEMultipart()
